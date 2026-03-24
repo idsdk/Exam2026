@@ -1,22 +1,18 @@
 package kr.ac.kopo.idsdk.exam2026.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class Ex06Controller {
-//    @GetMapping("/exam06")
-//    public String requestMethod(Model model){
-//        model.addAttribute("title1", "Model 유형연습1");
-//        model.addAttribute("title2", "문자열값 또는 객체참조값 전달 가능");
-//        return "viewPage";
-//    }
-
-    @GetMapping("/exam06")
-    public String requestMethod(Model model){
-        model.addAttribute("title1", "Model 유형연습1");
-        model.addAttribute("title2", "문자열값 또는 객체참조값 전달 가능");
-        return "view06";
+public class Ex08Controller {
+    @GetMapping("/exam08")
+    public ModelAndView requestMethod1()
+    {
+        ModelAndView modelView = new ModelAndView();
+        modelView.addObject("title1", "ModelAndView 연습");
+        modelView.addObject("title2", "ModelAndView addObject()와 setViewName()을 사용");
+        modelView.setViewName("viewPage");
+        return modelView;
     }
 }
